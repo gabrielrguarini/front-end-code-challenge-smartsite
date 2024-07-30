@@ -1,5 +1,5 @@
 "use client";
-import { Locations } from "@/types/types";
+import { LocationsType } from "@/types/types";
 import Image from "next/image";
 import localFont from "next/font/local";
 
@@ -7,7 +7,7 @@ const gothamBold = localFont({
   src: "../fonts/gotham-bold.woff2",
 });
 
-export default function ItemList({ locations }: { locations: Locations }) {
+export default function ItemList({ locations }: { locations: LocationsType }) {
   const locationsList = locations.locations.map((location, index) => {
     return (
       <li key={index} className="min-w-60">
