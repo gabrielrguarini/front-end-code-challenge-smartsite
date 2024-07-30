@@ -1,16 +1,75 @@
 "use client";
-import { useFilter } from "@/app/hooks/useFilter";
+import { LocationType } from "@/types/types";
 import localFont from "next/font/local";
 import Image from "next/image";
+import React, { useState } from "react";
 const gothamBold = localFont({
   src: "../../fonts/gotham-bold.woff2",
 });
-export default function Form() {
-  const { hourFilter, setHourFilter } = useFilter();
+export default function Form({
+  locations,
+  locationsList,
+  setlocationsList,
+}: {
+  locations: LocationType[] | undefined;
+  locationsList: LocationType[] | undefined;
+  setlocationsList: React.Dispatch<
+    React.SetStateAction<LocationType[] | undefined>
+  >;
+}) {
+  const [hourFilter, setHourFilter] = useState(0);
+  const [closed, setClosed] = useState(false);
   const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
     setHourFilter(parseInt(event.target.value, 10));
-    console.log(hourFilter);
+  };
+
+  const handleCheckBoxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setClosed(event.target.checked);
+  };
+  const handleFilter = (hourFilter: number, closed: boolean) => {
+    console.log(hourFilter, closed);
+    if (!closed) {
+      setlocationsList(locations?.filter((location) => location.opened));
+    } else {
+      setlocationsList(locations);
+    }
+
+    if (hourFilter !== 0) {
+      const openHourFilter = hourFilter === 1 ? 6 : hourFilter === 2 ? 12 : 18;
+      const closeHourFilter =
+        hourFilter === 1 ? 12 : hourFilter === 2 ? 18 : 23;
+      setlocationsList((prev) =>
+        prev?.filter((location) => {
+          if (!location.schedules) {
+            return false;
+          }
+          for (let schedule of location.schedules) {
+            if (schedule.hour === "Fechada") {
+              return true;
+            }
+            const [locationOpenHour, locationCloseHour] =
+              schedule.hour.split(" às ");
+            const locationOpenHourInt = parseInt(
+              locationOpenHour.replace("h", ""),
+              10
+            );
+            const locationCloseHourInt = parseInt(
+              locationCloseHour.replace("h", ""),
+              10
+            );
+            if (
+              locationOpenHourInt <= openHourFilter &&
+              locationCloseHourInt >= closeHourFilter
+            )
+              return true;
+            else return false;
+          }
+        })
+      );
+    }
+  };
+  const handleClearFilter = () => {
+    setlocationsList(locations);
   };
   return (
     <form className="flex flex-col min-w-60 gap-4 border-4 border-grey-100 rounded-lg p-6 text-gray-400">
@@ -63,30 +122,32 @@ export default function Form() {
         </div>
       </div>
       <div className="flex gap-2 items-center m-auto text-dark-grey">
-        <input type="checkbox" name="closed" id="" className="w-4 h-4" />
+        <input
+          type="checkbox"
+          name="closed"
+          id=""
+          className="w-4 h-4"
+          onChange={handleCheckBoxChange}
+        />
         <label htmlFor="closed">Exibir unidades fechadas</label>
       </div>
       <p className="text-dark-grey m-auto">
         Resultados encontrados:{" "}
-        <span className={`${gothamBold.className} text-xl`}>0</span>
+        <span className={`${gothamBold.className} text-xl`}>
+          {locationsList ? locationsList.length : "0"}
+        </span>
       </p>
       <div className="flex flex-col m-auto gap-2 lg:flex-row lg:w-full lg:justify-center">
         <button
           type="button"
-          onClick={() => {
-            console.log("FILTRAR");
-            console.log(`Hora selecionada: ${hourFilter}`);
-          }}
+          onClick={() => handleFilter(hourFilter, closed)}
           className={`${gothamBold.className} lg:w-1/2 px-8 py-2 rounded-md bg-yellow text-dark-grey uppercase`}
         >
           Encontrar unidade
         </button>
         <button
           type="button"
-          onClick={() => {
-            console.log("LIMPAR");
-            setHourFilter(0);
-          }}
+          onClick={handleClearFilter}
           className={`${gothamBold.className} lg:w-1/2 px-8 py-2 rounded-md border-2 text-dark-grey uppercase`}
         >
           LIMPAR
