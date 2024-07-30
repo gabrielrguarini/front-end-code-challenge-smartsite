@@ -40,7 +40,7 @@ export default function Legend() {
               src={"/images/required-towel.png"}
               width={70}
               height={70}
-              alt="Máscara Obrigatório"
+              alt="Toalha obrigatório"
               className="m-auto"
             />
             <p>Obrigatório</p>
@@ -50,7 +50,7 @@ export default function Legend() {
               src={"/images/recommended-towel.png"}
               width={70}
               height={70}
-              alt="Máscara Obrigatório"
+              alt="Toalha recomendado"
               className="m-auto"
             />
             <p>Recomendado</p>
@@ -65,7 +65,7 @@ export default function Legend() {
               src={"/images/partial-fountain.png"}
               width={70}
               height={70}
-              alt="Máscara Obrigatório"
+              alt="Bebedouro parcialmente liberado"
               className="m-auto"
             />
             <p>Obrigatório</p>
@@ -75,7 +75,7 @@ export default function Legend() {
               src={"/images/forbidden-fountain.png"}
               width={70}
               height={70}
-              alt="Máscara Obrigatório"
+              alt="Bebedouro proibido"
               className="m-auto"
             />
             <p>Recomendado</p>
@@ -90,7 +90,7 @@ export default function Legend() {
               src={"/images/required-lockerroom.png"}
               width={70}
               height={70}
-              alt="Máscara Obrigatório"
+              alt="Vestiário liberado"
               className="m-auto"
             />
             <p>Liberado</p>
@@ -100,7 +100,7 @@ export default function Legend() {
               src={"/images/partial-lockerroom.png"}
               width={70}
               height={70}
-              alt="Máscara Obrigatório"
+              alt="Vestiário parcialmente liberado"
               className="m-auto"
             />
             <p>Parcial</p>
@@ -110,7 +110,7 @@ export default function Legend() {
               src={"/images/forbidden-lockerroom.png"}
               width={70}
               height={70}
-              alt="Máscara Obrigatório"
+              alt="Vestiário fechado"
               className="m-auto"
             />
             <p>Fechado</p>

@@ -1,5 +1,5 @@
 "use client";
-import { LocationType, LocationsType } from "@/types/types";
+import { LocationType } from "@/types/types";
 import { ListItem } from "@/app/components/list-item";
 
 export default function List({
@@ -8,10 +8,10 @@ export default function List({
   locations: LocationType[] | undefined;
 }) {
   if (!locations) {
-    return <div>Carregando...</div>;
+    return null;
   }
   return (
-    <ul className="flex flex-wrap gap-4 m-auto justify-start items-start">
+    <ul className="flex flex-wrap gap-4 m-auto justify-center items-start">
       {locations.map((location, index) => (
         <ListItem key={index} location={location} />
       ))}

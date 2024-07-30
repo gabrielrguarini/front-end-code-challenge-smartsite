@@ -9,7 +9,7 @@ const gothamBold = localFont({
 
 export function ListItem({ location }: { location: LocationType }) {
   return (
-    <li className="shadow-sm w-[300px] min-h-[380px] bg-gray-100 rounded-lg p-4 mx-auto">
+    <li className="flex flex-col overflow-hidden min-w-60 shadow-sm max-w-[350px] h-[380px] bg-gray-100 rounded-lg p-4">
       <p
         className={`text-green-700 font-semibold py-2 ${
           location.opened ? "text-green" : "text-red"

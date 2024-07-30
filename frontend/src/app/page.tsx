@@ -28,7 +28,7 @@ export default function Home() {
     return <div>Carregando...</div>;
   }
   return (
-    <main className="flex min-h-screen flex-col justify-start p-24 gap-8 text-dark-grey max-w-screen-xl m-auto">
+    <main className="flex min-h-screen flex-col justify-start p-8 md:p-24 gap-8 text-dark-grey max-w-screen-xl m-auto">
       <Header />
       <Form
         locations={locations}
