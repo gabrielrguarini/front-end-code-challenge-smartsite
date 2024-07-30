@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Smart Fit Front-end Challenge
 
-## Getting Started
+## Projeto Disponível Online Em [Smart Fit](https://challenge-smartsite-five.vercel.app/)
+Deploy realizado na [Vercel](https://vercel.com/)
 
-First, run the development server:
+## 📑 Descrição
+
+Este é um projeto criado para a avaliação de habilidades técnicas para o papel de Front-end na Smart Fit. A proposta foi desenvolver uma página para buscar unidades abertas ou fechadas para consulta e reserva, seguindo um layout específico e uma série de regras de negócios.
+
+Eu o desenvolvi como um desafio pessoal em que busco sempre me aperfeiçoar para estar atualizado e pronto para o mercado de trabalho. Neste desafio pude treinar habilidades com tailwindcss e um pouco de lógica de programação uma vez que foi preciso fazer uma sanitização em alguns dados para poder fazer a filtragem das unidades.
+
+## 📋 Funcionalidades
+
+- Carregar unidades a partir de um arquivo JSON
+- Buscar todas as unidades
+- Filtrar unidades abertas ou fechadas
+- Filtrar unidades por período de funcionamento
+- Mostrar previsão de resultados encontrados
+- Mostrar unidades ao buscar
+- Validar para mostrar ícones corretos de acordo com o status
+
+## 🔒 Regras de Negócio
+
+- Filtrar unidades abertas ou fechadas
+- Filtrar unidades por período de funcionamento
+- Mostrar mensagem "Nenhuma unidade encontrada" quando não houver resultados
+
+## ⚙️ Componentes
+
+- Formulário de busca com filtros
+- Legenda
+- Lista de unidades
+
+## 🎨 Layout
+
+O layout proposto (disponível em `./_material`) foi seguido com fidelidade, garantindo um design responsivo e compatível com diversos dispositivos e navegadores.
+
+## 📸 Prints
+
+![iPhone-13-PRO-challenge-smartsite-five vercel app](https://github.com/user-attachments/assets/d2b9a08d-f2a4-4f9e-bd20-26efac256f68)
+![iPhone-13-PRO-challenge-smartsite-five vercel app (1)](https://github.com/user-attachments/assets/80f98e49-7c75-45b5-89d4-25043935175d)
+
+
+## 🛠 Tecnologias Utilizadas
+
+- [React](https://reactjs.org/)
+- [Tailwindcss](https://tailwindcss.com/)
+
+## 🚀 Instruções de Instalação
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone github.com/gabrielrguarini/front-end-code-challenge-smartsite.git
+cd front-end-code-challenge-smartsite
+npm install
+npm npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 💡 Considerações
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+O projeto foi desenvolvido como um desafio pessoal em que busco sempre me aperfeiçoar para estar atualizado e pronto para o mercado de trabalho. Neste desafio pude treinar habilidades com tailwindcss e responsividade e um pouco de lógica de programação uma vez que foi preciso fazer uma sanitização em alguns dados para poder fazer a filtragem das unidades.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+# 🔧 Melhorias Futuras
+Implementação de testes unitários e e2e.
+Utilização de cache do Next.js para otimização de performance.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 📞 Contato
+Se você tiver alguma dúvida ou quiser discutir este projeto, sinta-se à vontade para entrar em contato comigo:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Nome: Gabriel Rezende Guarini
+Email: gabrielrguarini@gmail.com
+LinkedIn: [Meu LinkedIn](https://www.linkedin.com/in/gabriel-guarini-832768111/)
+Feito com 💜 por Gabriel Guarini
